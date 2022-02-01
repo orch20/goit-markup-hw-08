@@ -1,0 +1,37 @@
+.our-clients {
+  padding-top: 73px;
+  padding-bottom: 94px;
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item + &__item {
+    margin-left: 30px;
+  }
+  &__link {
+    display: block;
+    width: 170px;
+    height: 90px;
+    border: 1px solid var(--svg-grey-color);
+    border-radius: 4px;
+    padding: 16px 32px;
+    color: var(--svg-grey-color);
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__svg {
+    fill: currentColor;
+  }
+  &__link:hover,
+  &__link:focus {
+    border: 1px solid var(--brand-color);
+    color: var(--brand-color);
+  }
+}

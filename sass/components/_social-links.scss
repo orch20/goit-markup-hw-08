@@ -1,0 +1,35 @@
+.social-link {
+  &__list {
+    @extend %flexCenter;
+  }
+
+  &__link {
+    display: block;
+    width: 44px;
+    height: 44px;
+    padding: 12px 12px;
+    border-radius: 50%;
+    color: var(--svg-grey-color);
+    background-color: transparent;
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__svg {
+    fill: currentColor;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    background-color: var(--brand-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--white-font-color);
+  }
+
+  &__item + &__item {
+    margin-left: 10px;
+  }
+}
