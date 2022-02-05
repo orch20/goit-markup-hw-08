@@ -2,13 +2,25 @@
   background-color: var(--second-background-color);
   padding-bottom: 60px;
   padding-top: 60px;
-  & > .container {
-    display: flex;
-    align-items: baseline;
-  }
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: baseline;
+    }
+    @media screen and (min-width: 1200px) {
+      justify-content: flex-start;
+    }
+  }
   &__adress-wrap {
-    margin-right: 70px;
+    @media screen and (min-width: 1200px) {
+      margin-right: 70px;
+    }
   }
   &__logo--white {
     color: var(--white-font-color);
@@ -16,7 +28,13 @@
 
   &__logo {
     display: block;
+    text-align: center;
     margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    @media screen and (min-width: 1200px) {
+      text-align: left;
+    }
   }
 
   &__location-link {
@@ -34,17 +52,31 @@
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
   }
+  &__item {
+    text-align: center;
+    margin-bottom: 60px;
+    @media screen and (min-width: 1200px) {
+      text-align: left;
+    }
+  }
 
   &__item:not(:last-child) {
     margin-bottom: 9px;
   }
   &__social-link-wrap {
-    margin-right: 93px;
+    // @extend %flexCenter;
+    @media screen and (min-width: 1200px) {
+      margin-right: 93px;
+    }
   }
 
   &__title {
     color: var(--white-font-color);
     margin-bottom: 20px;
+    text-align: center;
+    @media screen and (min-width: 1200px) {
+      text-align: left;
+    }
   }
 
   &__social-link {
@@ -58,6 +90,7 @@
     transition-property: color, background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 60px;
   }
   &__svg {
     fill: currentColor;
@@ -68,9 +101,15 @@
     background-color: var(--brand-color);
   }
 
+  &__input-container {
+    width: 480px;
+  }
+
   &__input {
+    display: block;
+    @extend %flexCenter;
     background-color: transparent;
-    width: 358px;
+    width: 450px;
     height: 50px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
@@ -78,14 +117,22 @@
     border-radius: 4px;
     font-size: 16px;
     line-height: 1.25;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
     padding: 15px;
+    margin: 0px auto 20px auto;
+    @media screen and (min-width: 1200px) {
+      width: 358px;
+      margin: 0px 12px 0px 0px;
+    }
   }
   &__input-container {
-    @extend %flexCenter;
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   &-button-container {

@@ -1,26 +1,61 @@
 .our-clients {
-  padding-top: 73px;
-  padding-bottom: 94px;
+  padding: 60px 0;
+  @media screen and (min-width: 1200px) {
+    padding: 94px 0;
+  }
   &__title {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 50px;
+    }
   }
 
   &__list {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    margin-right: -30px;
+  }
+  &__item {
+    @extend %flexCenter;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    width: calc(100% / 2 - 30px);
+
+    @media screen and (min-width: 768px) {
+      width: calc(100% / 3 - 30px);
+    }
+    @media screen and (min-width: 1200px) {
+      width: calc(100% / 6 - 30px);
+    }
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 0px;
+    }
+  }
+  &__item:nth-last-child(-n + 2) {
+    margin-bottom: 0px;
+  }
+  &__item:nth-last-child(-n + 3) {
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0px;
+    }
   }
 
-  &__item + &__item {
-    margin-left: 30px;
-  }
+  // &__item + &__item {
+  //   margin-bottom: 30px;
+  // }
+
   &__link {
     display: block;
-    width: 170px;
-    height: 90px;
+    width: 100%;
+    height: 92px;
     border: 1px solid var(--svg-grey-color);
     border-radius: 4px;
-    padding: 16px 32px;
+    padding: 16px 0;
+    text-align: center;
     color: var(--svg-grey-color);
     transition-property: color, background-color;
     transition-duration: 250ms;
