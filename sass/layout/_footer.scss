@@ -101,15 +101,11 @@
     background-color: var(--brand-color);
   }
 
-  &__input-container {
-    width: 480px;
-  }
-
   &__input {
     display: block;
     @extend %flexCenter;
     background-color: transparent;
-    width: 450px;
+    width: 90vw;
     height: 50px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
@@ -123,6 +119,9 @@
     color: rgba(255, 255, 255, 0.6);
     padding: 15px;
     margin: 0px auto 20px auto;
+    @media screen and (min-width: 480px) {
+      width: 450px;
+    }
     @media screen and (min-width: 1200px) {
       width: 358px;
       margin: 0px 12px 0px 0px;

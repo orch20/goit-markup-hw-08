@@ -128,7 +128,7 @@
   }
 
   &__checkbox-container {
-    display: flex;
+    // display: flex;
     margin-bottom: 30px;
   }
   &__checkbox-text {
@@ -163,6 +163,7 @@
     fill: transparent;
   }
   &__checkbox-link {
+    display: inline;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;

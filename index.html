@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
-    <!-- <header class="header">
+    <header class="header">
       <div class="container header__container">
         <nav class="header__nav">
           <a class="header__logo link logo" href="./index.html"
@@ -48,8 +48,40 @@
               </svg>+38 096 111 11 11</a>
             </li>
         </ul>
+        <button data-menu-open class="header-open-btn" type="button">
+          <svg width="40px" height="40px">
+            <use href="./images/sprite.svg#icon-header-menu-open"></use>
+          </svg>
+        </button>
       </div>
-    </header> -->
+      <div data-menu class="mob-menu is-hidden">
+        <div class="container">
+          <div class="mob-menu-top">
+        <button data-menu-close class="header-close-btn" type="button">
+        <svg width="40px" height="40px">
+            <use href="./images/sprite.svg#icon-close-icon"></use>
+          </svg>
+        </button>
+        
+        <ul class="header__nav-list-mob">
+            <li class="header__nav-item"><a class="header__nav-link" href="./index.html">Cтyдия</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="./portfolio.html">Портфолио</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">Контакты</a></li>
+          </ul>
+          </div>
+          <div class="mob-menu-bottom">
+          <ul class="header__adress-list-mob">
+            <li class="header__adress-item">
+            <a class="header__adress-link-mob-tel" href="tel:+380961111111">+38 096 111 11 11</a>
+            </li>
+          <li class="header__adress-item">
+            <a class="header__adress-link-mob-mail" href="mailto:info@devstudio.com">info@devstudio.com</a>
+          </li>
+          
+        </ul>
+        </div>
+      </div>
+    </header>
 
     <main>
       <section class="section-hero">
@@ -99,15 +131,10 @@
                     <svg class="modal__checkbox-icon" width="16px" height="15px">
                       <use href="./images/sprite.svg#vector-checkbox"></use>
                     </svg>
-                  </span>Соглашаюсь с рассылкой и принимаю <a class="modal__checkbox-link" href="#">Условия договора</a>
+                  </span>Соглашаюсь с рассылкой и принимаю<a class="modal__checkbox-link" href="#">Условия договора</a>
                 </label>
                 </div> 
                 <button class="button" type="submit">Отправить</button>
-
-                
-
-
-
               </form>
             </div>
           </div>
@@ -510,5 +537,6 @@
       </footer>
     </main>
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>
