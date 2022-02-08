@@ -49,7 +49,7 @@
             </li>
         </ul>
         <button data-menu-open class="header-open-btn" type="button">
-          <svg width="40px" height="40px">
+          <svg class="mob-menu__open-btn" width="40px" height="40px">
             <use href="./images/sprite.svg#icon-header-menu-open"></use>
           </svg>
         </button>
@@ -57,14 +57,14 @@
       <div data-menu class="mob-menu is-hidden">
         <div class="container">
           <div class="mob-menu-top">
-        <button data-menu-close class="header-close-btn" type="button">
-        <svg width="40px" height="40px">
+        <button data-menu-close class="mob-menu__close-btn" type="button">
+        <svg class="header-close-svg" width="40px" height="40px">
             <use href="./images/sprite.svg#icon-close-icon"></use>
           </svg>
         </button>
         
         <ul class="header__nav-list-mob">
-            <li class="header__nav-item"><a class="header__nav-link" href="./index.html">Cтyдия</a></li>
+            <li class="header__nav-item"><a class="header__nav-link header__mob-menu--active" href="./index.html">Cтyдия</a></li>
             <li class="header__nav-item"><a class="header__nav-link" href="./portfolio.html">Портфолио</a></li>
             <li class="header__nav-item"><a class="header__nav-link" href="">Контакты</a></li>
           </ul>
@@ -77,6 +77,12 @@
           <li class="header__adress-item">
             <a class="header__adress-link-mob-mail" href="mailto:info@devstudio.com">info@devstudio.com</a>
           </li>
+        </ul>
+        <ul class="mob-menu_social-list" >
+          <li class="mob-menu_social-item"><a class="mob-menu_social-link" href="http://" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li class="mob-menu_social-item"><a class="mob-menu_social-link" href="http://" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li class="mob-menu_social-item"><a class="mob-menu_social-link" href="http://" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li class="mob-menu_social-item"><a class="mob-menu_social-link" href="http://" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           
         </ul>
         </div>
@@ -126,33 +132,21 @@
                 
                 <div class="modal__checkbox-container">
                   <input class="modal__input-checkbox visually-hidden" type="checkbox" name="agree" value="yes" id="checkbox">
-                <label class="modal__checkbox-text" for="checkbox">
-                  <span class="modal__checkbox-wrap">
-                    <svg class="modal__checkbox-icon" width="16px" height="15px">
-                      <use href="./images/sprite.svg#vector-checkbox"></use>
-                    </svg>
-                  </span>Соглашаюсь с рассылкой и принимаю<a class="modal__checkbox-link" href="#">Условия договора</a>
-                </label>
-                </div> 
+                  <label class="modal__checkbox-text" for="checkbox">
+                    <span class="modal__checkbox-wrap">
+                      <svg class="modal__checkbox-icon" width="16px" height="15px">
+                        <use href="./images/sprite.svg#vector-checkbox"></use>
+                      </svg>
+                    </span>
+                    <span>
+                    Соглашаюсь с рассылкой и принимаю <a class="modal__checkbox-link" href="#">Условия договора</a></span>
+                  </label>                </div> 
                 <button class="button" type="submit">Отправить</button>
               </form>
             </div>
           </div>
         </div>
       </section>
-
-      <script>
-        (() => {
-          document.querySelector('.js-speaker-form').addEventListener('submit', e => {
-            e.preventDefault();
-
-            new FormData(e.currentTarget).forEach((value, name) =>
-              console.log(`${name}: ${value}`)
-            );
-          });
-        })();
-      </script>
-
       <section class="about-section">
         <div class="container">
           <h2 class="visually-hidden">Особенности</h2>
@@ -210,15 +204,15 @@
           <h2 class="todo-section__title title-h2">Чем мы занимаемся</h2>
           <ul class="todo-section__list">
             <li class="todo-section__item">
-              <img src="./images/whattodo1.jpg" alt="example-1" width="370" />
+              <img srcset="./images/we-doing1.jpg 1x, ./images/we-doing1@2x.jpg 2x" src="./images/whattodo1.jpg" alt="example-1" width="370" />
               <p class="todo-section__text">Десктопные приложения</p>
             </li>
             <li class="todo-section__item">
-              <img src="./images/whattodo2.jpg" alt="example-2" width="370" />
+              <img srcset="./images/we-doing2.jpg 1x, ./images/we-doing2@2x.jpg 2x" src="./images/whattodo2.jpg" alt="example-2" width="370" />
               <p class="todo-section__text">Мобильные приложения</p>
             </li>
             <li class="todo-section__item">
-              <img src="./images/whattodo3.jpg" alt="example-3" width="370" />
+              <img srcset="./images/we-doing3.jpg 1x, ./images/we-doing3@2x.jpg 2x" src="./images/whattodo3.jpg" alt="example-3" width="370" />
               <p class="todo-section__text">Дизайнерские решения</p>
             </li>
           </ul>
@@ -232,6 +226,7 @@
             <li class="ourteam-section__item">
               <img
                 class="ourteam-section__pic"
+                srcset="./images/ermacov.jpg 1x, ./images/ermacov@2x.jpg 2x"
                 src="./images/team-card1.jpg"
                 alt="team card-1"
                 width="270"
@@ -276,6 +271,7 @@
             <li class="ourteam-section__item">
               <img
                 class="ourteam-section__pic"
+                srcset="./images/repina.jpg 1x, ./images/repina@2x.jpg 2x"
                 src="./images/team-card2.jpg"
                 alt="team card-2"
                 width="270"
@@ -321,6 +317,7 @@
             <li class="ourteam-section__item">
               <img
                 class="ourteam-section__pic"
+                srcset="./images/tarasov.jpg 1x, ./images/tarasov@2x.jpg 2x"
                 src="./images/team-card3.jpg"
                 alt="team card-3"
                 width="270"
@@ -366,6 +363,7 @@
             <li class="ourteam-section__item">
               <img
                 class="ourteam-section__pic"
+                srcset="./images/ermacov.jpg 1x, ./images/ermacov@2x.jpg 2x"
                 src="./images/team-card4.jpg"
                 alt="team card-4"
                 width="270"
@@ -538,5 +536,16 @@
     </main>
     <script src="./js/modal.js"></script>
     <script src="./js/menu.js"></script>
+    <!-- <script>
+        (() => {
+          document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+          });
+        })();
+      </script> -->
   </body>
 </html>

@@ -5,10 +5,18 @@
   &__container {
     @extend %flexCenter;
     padding: 16px 15px;
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
   }
   &__logo {
-    // padding: 25px 0px;
-    // margin-right: 93px;
+    @media screen and (min-width: 768px) {
+      padding: 25px 0px;
+      margin-right: 88px;
+    }
+    @media screen and (min-width: 1200px) {
+      margin-right: 93px;
+    }
     display: block;
   }
   &__logo--second-word {
@@ -24,6 +32,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-right: 83px;
+    }
+    @media screen and (min-width: 1200px) {
       margin-right: 305px;
     }
   }
@@ -39,16 +50,28 @@
     }
   }
   &__nav-item {
-    padding: 32px 0;
     display: flex;
     justify-content: flex-start;
     @media screen and (min-width: 480px) {
     }
   }
-  &__nav-link,
+  &__nav-link {
+    @media screen and (max-width: 768px) {
+      margin-bottom: 32px;
+    }
+    @media screen and (min-width: 768px) {
+      padding: 32px 0;
+      display: block;
+    }
+  }
+
   &__adress-link {
+    padding: 32px 0;
     display: block;
     @media screen and (min-width: 768px) {
+      padding: 0;
+    }
+    @media screen and (min-width: 1200px) {
       padding: 32px 0;
     }
   }
@@ -59,7 +82,7 @@
     @extend %flexCenter;
   }
   &__nav-item:not(:last-child) {
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 768px) {
       margin-right: 50px;
     }
   }
@@ -107,6 +130,9 @@
     display: none;
     @media screen and (min-width: 768px) {
       display: block;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
     }
   }
   &__adress-link {
@@ -118,6 +144,7 @@
     color: var(--second-font-color);
     text-align: center;
   }
+
   &__adress-item {
     @media screen and (min-width: 480px) {
       display: flex;
@@ -127,15 +154,16 @@
   &__adress-item:not(:last-child) {
     margin-bottom: 32px;
     @media screen and (min-width: 768px) {
-      margin-bottom: 0px;
+      margin-bottom: 8px;
     }
     @media screen and (min-width: 1200px) {
       margin-right: 30px;
+      margin-bottom: 0px;
     }
   }
 
   &__icon {
-    margin-right: 10px;
+    margin-right: 8px;
     fill: currentColor;
   }
 }
@@ -156,6 +184,11 @@
   background-color: var(--white-font-color);
   width: 100%;
   height: 100%;
+  z-index: 1;
+  @media screen and (min-width: 768px) {
+    display: none;
+    transform: translateY(0);
+  }
 }
 .mob-menu > .container {
   position: relative;
@@ -163,7 +196,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0px 0 134px 40px;
+  padding: 48px 40px 48px 40px;
+}
+.mob-menu.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateY(101%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header__nav-link.header__mob-menu--active {
+  color: var(--brand-color);
 }
 // .mob-menu-wrap {
 //   display: flex;
@@ -174,7 +217,7 @@
   font-size: 34px;
   line-height: 1.18;
   letter-spacing: 0.02em;
-  color: var(--second-font-color);
+  color: var(--brand-color);
 }
 .header__adress-link-mob-mail {
   font-weight: 500;
@@ -182,28 +225,55 @@
   line-height: 28px;
   letter-spacing: 0.02em;
   color: var(--second-font-color);
+  margin-bottom: 64px;
 }
-.header__adress-link-mob-tel:hover,
-.header__adress-link-mob-tel:focus,
+.mob-menu__open-btn:hover,
+.mob-menu__open-btn:focus,
+.mob-menu__close-btn:hover,
+.mob-menu__close-btn:focus,
 .header__adress-link-mob-mail:hover,
 .header__adress-link-mob-mail:focus {
   color: var(--brand-color);
 }
+.mob-menu__open-btn,
+.mob-menu__close-btn {
+  @extend %mainTransition;
+  fill: currentColor;
+}
 
-.header-close-btn {
+.mob-menu__close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
-
-  // margin: 10px 0px 0px auto;
   padding: 0;
   background: none;
   border: 0;
   @extend %flexCenter;
 }
 
-.mob-menu.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
+.mob-menu_social-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mob-menu_social-item {
+  position: relative;
+}
+.mob-menu_social-item + .mob-menu_social-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  width: 1px;
+  height: 22px;
+  background-color: rgba(33, 33, 33, 0.2);
+  border-radius: 2px;
+}
+.mob-menu_social-item + .mob-menu_social-item {
+  margin-left: 10px;
+}
+.mob-menu_social-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: var(--brand-color);
 }
